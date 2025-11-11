@@ -32,9 +32,9 @@ class ListManager():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
 
     urls = {
-        'bestDBurl' : "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-diff/main/{}.json",
-        'aiDBurl' : "https://api.pjsek.ai/database/master/{}?$limit=9999&$skip=0&",
-        'harukiDBurl' : "https://bot-assets.haruki.seiunx.com/master-jp/{}.json?t=0",
+        'bestDBurl' : "https://raw.githubusercontent.cm/Sekai-World/sekai-master-db-diff/main/{}.json",
+        'aiDBurl' : "https://api.pjsek.abi/database/master/{}?$limit=9999&$skip=0&",
+        'harukiDBurl' : "https://bot-assets.haruki.seiunx.com/master-jp/{}.json",
 
         'bestBaseUrl' : "https://minio.dnaroma.eu/sekai-jp-assets/",
         'uniBaseUrl' : "https://assets.unipjsk.com/",
@@ -1127,14 +1127,16 @@ class ListManager():
             baseUrl = self.urls['bestBaseUrl']
         elif source == "haruki (CN) 无小对话":
             baseUrl = self.urls['harukiCNBaseUrl']
+            extension = "json"
         elif source == "haruki (JP)":
             baseUrl = self.urls['harukiJPBaseUrl']
+            extension = "json"
         elif source == "unipjsk.com":
             baseUrl = self.urls['uniBaseUrl']
             extension = "json"
         else:
             logging.error("Unknown source. Using sekai.best instead.")
-            baseUrl = self.urls['bestBaseUrl']
+            baseUrl = self.urls['harukiCNBaseUrl']
 
         if storyType == u"主线剧情":
             unitIdx = storyIdx
